@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Balck & White</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <ul class="top-menu">
+            <a href="index.html" class="menu-link">
+                <li>Home</li>
+            </a>
+            <a href="works.html" class="menu-link active">
+                <li>Works</li>
+            </a>
+            <a href="contact.html" class="menu-link">
+                <li>Contact</li>
+            </a>
+        </ul>
+        <h1>Balck & White</h1>
+        <p>Photographer portfolio</p>
+    </header>
+    <div class="works-content">
+        <h2>My works</h2>
+        <ul class="works-categories">
+            <li onclick="category('all')">All</li>
+            <li onclick="category('animals')">Animals</li>
+            <li onclick="category('nature')">Nature</li>
+            <li onclick="category('piano')">Piano</li>
+            <li onclick="category('flowers')">Flowers</li>
+            <li onclick="category('baby')">Babies</li>
+        </ul>
+        <img src="img/1.jpg" class="animals">
+        <img src="img/2.jpg" class="animals">
+        <img src="img/3.jpg" class="nature">
+        <img src="img/4.jpg" class="baby">
+        <img src="img/5.jpg" class="animals">
+        <img src="img/6.jpg" class="piano flowers">
+        <img src="img/7.jpg" class="nature">
+        <img src="img/8.jpg" class="animals nature flowers">
+        <img src="img/9.jpg" class="piano flowers">
+        <img src="img/10.jpg" class="piano">
+        <img src="img/11.jpg" class="animals">
+        <img src="img/12.jpg" class="animals">
+        <img src="img/13.jpg" class="piano">
+        <img src="img/14.jpg" class="nature">
+        <img src="img/15.jpg" class="nature flowers">
+        <img src="img/16.jpg" class="baby">
+        <img src="img/17.jpg" class="piano">
+        <img src="img/18.jpg" class="baby">
+    </div>
+    <script>
+        function category(a) {
+            if (a == 'all') {
+                var images = document.getElementsByTagName('img');
+                for (var i in images) {
+                    images[i].style.display = 'inline-block';
+                }
+            }
+            else {
+                var images = document.getElementsByTagName('img');
+                for (var i in images) {
+                    var category = false;
+                    for (j in images[i].classList) {
+                        if (images[i].classList[j] == a) {
+                            category = true;
+                            break
+                        }
+                    }
+                    if (!category) {
+                        images[i].style.display = 'none';
+
+                    }
+                    else {
+                        images[i].style.display = 'inline-block';
+                    }
+                }
+            }
+        }
+    </script>
+    <footer></footer>
+    <script>
+        var d = new Date();
+        document.getElementsByTagName('footer')[0].innerHTML = '&copy; ' + d.getFullYear() +' Balck & White';
+    </script>
+</body>
+
+</html>
